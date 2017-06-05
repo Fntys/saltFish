@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # fnty
 
 > fnty a vue.js project
@@ -28,3 +29,7 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# saltFish
+一条咸鱼
+>>>>>>> a0f3ccca17fc4f6126c038e306b7ca9ed133b546
