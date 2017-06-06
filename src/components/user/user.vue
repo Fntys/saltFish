@@ -6,7 +6,7 @@
             </div>
             </transition>
             <div class="login-form">
-                
+            <div class="login-title"></div>
             </div>
 </div>
 </template>
