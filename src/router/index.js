@@ -1,20 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import More from '@/components/More'
+import index from '@/components/index'
+import more from '@/components/more/more'
+import user from '@/components/user/user'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'index',
+      component: index
     },
     {
       path: '/more',
-      name: 'More',
-      component: More
+      name: 'more',
+      component: more
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: user
     }
   ]
 })

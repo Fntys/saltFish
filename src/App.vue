@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <nav class="topnav">
-      <img class="nav-logo" src="./assets/fish.png">
+    <nav class="head">
+      <img class="nav-logo" src="./assets/img/fish.png">
     </nav>
+    <div class="content">
     <router-view></router-view>
-    <nav class="footnav">
+    </div>
+    <nav class="foot">
     <el-menu mode="horizontal" class="el-menu-nav" default-active="1" @select="handleSelect" >
     <el-row>
       <el-col :span="6">
@@ -61,7 +63,7 @@ export default {
   }
 }
 </script>
-<style src="./min/css/normalize.css"></style>
+<style src="./assets/css/normalize.css"></style>
 <style lang="scss"  type="text/css">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -69,7 +71,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-.topnav{
+.head{
   height: 50px;
   background:#1F2D3D;
   .nav-logo {
@@ -78,7 +80,7 @@ export default {
   margin: 0 auto;
   }
 }
-.footnav{
+.foot{
   position: fixed;
   bottom:0;
   width:100%;
@@ -93,16 +95,16 @@ export default {
     margin:0 auto;
   }
   .foot-home{
-    background:url(./assets/home-1.svg);
+    background:url(./assets/img/home-1.svg);
   }
    .foot-mission{
-    background:url(./assets/mis-1.svg);
+    background:url(./assets/img/mis-1.svg);
   }
    .foot-ele{
-    background:url(./assets/more-1.svg);
+    background:url(./assets/img/more-1.svg);
   }
    .foot-user{
-    background:url(./assets/user-1.svg);
+    background:url(./assets/img/user-1.svg);
   }
   a{
     text-decoration: none;
@@ -121,16 +123,16 @@ export default {
 .is-active{
   color:#1296db;
  .foot-home{
-    background:url(./assets/home-2.svg);
+    background:url(./assets/img/home-2.svg);
   }
    .foot-mission{
-    background:url(./assets/mis-2.svg);
+    background:url(./assets/img/mis-2.svg);
   }
    .foot-ele{
-    background:url(./assets/more-2.svg);
+    background:url(./assets/img/more-2.svg);
   }
    .foot-user{
-  background:url(./assets/user-2.svg);
+  background:url(./assets/img/user-2.svg);
 }
 }
 
