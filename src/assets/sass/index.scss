@@ -1,0 +1,75 @@
+/* 全局 */
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; }
+.btn-primary{
+    background: linear-gradient(#6f97e5,#527ed9);
+    box-shadow: inset 0 1px 2px #7ea1e8;
+    color: #fff;
+    text-shadow: #4f70b3 0 -1px 0;
+    border:none;
+    height:46px;
+    &:active,&:focus,&:hover{
+          box-shadow: inset 0 1px 1px #5378d2, inset 0 0 2px #627dca, inset 0 0 100px rgba(25,108,232,.5);
+    }
+    &.is-disabled{
+          cursor: not-allowed;
+    opacity: .4;
+    pointer-events: none;    background: linear-gradient(#6383c6,#4262af);    text-shadow: rgba(255,255,255,.496094) 0 1px 0;
+    color:#fff;
+    }
+}
+
+
+/* 首页 */
+#app { font-family: 'Avenir', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-align: center; color: #2c3e50; width: 100%; height: 100%;
+  .head { height: 50px; background-color: rgba(0, 0, 0, .8); position: fixed; width: 100%;
+    .nav-logo { width: 50px; height: 50px; margin: 0 auto; }
+  }
+  .content { height: 100%; width: 100%; padding-top: 50px; }
+  .foot { position: fixed; bottom: 0; width: 100%; }
+  .foot-nav-item { color: #212121; width: 100%;
+    .foot-icon { width: 32px; height: 32px; display: block; margin: 0 auto; }
+    .foot-home { background: url(../../assets/img/home-1.svg); }
+    .foot-mission { background: url(../../assets/img/mis-1.svg); }
+    .foot-ele { background: url(../../assets/img/more-1.svg); }
+    .foot-user { background: url(../../assets/img/user-1.svg); }
+    a { text-decoration: none; display: block; width: 100%; height: 100%; padding: 5px 0; }
+    p { margin: 0; line-height: 25px; font-size: 12px; }
+  }
+  .is-active { color: #1296db;
+    .foot-home { background: url(../../assets/img/home-2.svg); }
+    .foot-mission { background: url(../../assets/img/mis-2.svg); }
+    .foot-ele { background: url(../../assets/img/more-2.svg); }
+    .foot-user { background: url(../../assets/img/user-2.svg); }
+  }
+
+
+  .el-menu-nav { border-top: 1px solid #e6e6e6; background: #F9FAFC; }
+  .el-menu-item { border-bottom: none; }
+}
+/* 登录 */
+#login { width: 100%; height: 100%; overflow: hidden; display: flex; justify-content: center; align-items: center; background: #fff; background: url('../../assets/img/login_bg.png'); background-size: 100px; margin-top: -40px;
+  .modal-pf { margin: 20px; padding: 15px 10px; border: 1px solid #dadada; border-radius: 10px; box-shadow: 0 9px 30px -6px rgba(0, 0, 0, .2), 0 18px 20px -10px rgba(0, 0, 0, .04), 0 18px 20px -10px rgba(0, 0, 0, .04), 0 10px 20px -10px rgba(0, 0, 0, .04); background: url(../../assets/img/login-gray-bg.png) #fff bottom repeat-x; }
+  img { width: 80px; height: 80px; padding: 5px; background-color: rgba(0, 0, 0, .8); border-radius: 50%; }
+  .loginForm { width: 90%; margin: 0 auto;
+    .el-input__inner { height: 48px; line-height: 48px; }
+    .el-input-group__prepend { padding: 0; }
+    .login-user { width: 46px; height: 46px; display: block; background: url(../../assets/img/user.svg)no-repeat center center; background-size: 50%; }
+    .login-password { width: 46px; height: 46px; display: block; background: url(../../assets/img/password.svg)no-repeat center center; background-size: 80%; }
+  }
+  .login-tip { position: fixed; top: 50px; left: 0; width: 100%; min-height: 50px; line-height: 50px; text-align: center; background-color: rgba(0, 0, 0, .8); color: #fff; }
+  .fade-enter, .fade-leave-active { opacity: 0 }
+  .fade-leave-active { transition: all .3s ease; }
+  .fade-enter-active { transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0); }
+  .btn-primary{
+    width:100%;
+    font-size:18px;
+  }
+  .modal-foot{
+    p{
+    padding-top:23px;
+    margin:0;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+    border-top: 1px solid #d9d9d9;}
+  }
+}
