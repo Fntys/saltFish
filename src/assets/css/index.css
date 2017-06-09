@@ -7,6 +7,7 @@ html, body {
   width: 100%;
   height: 100%; }
 
+/* 全局修改样式 */
 .btn-primary {
   background: linear-gradient(#6f97e5, #527ed9);
   box-shadow: inset 0 1px 2px #7ea1e8;
@@ -24,6 +25,32 @@ html, body {
     text-shadow: rgba(255, 255, 255, 0.49609) 0 1px 0;
     color: #fff; }
 
+/* 提示框 */
+.tips {
+  width: 100%;
+  border-radius: 0px;
+  top: 0;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center; }
+  .tips .el-message__img {
+    width: 50px;
+    height: 50px;
+    position: initial; }
+  .tips .el-message__group {
+    margin: 0;
+    height: 50px;
+    line-height: 50px; }
+    .tips .el-message__group p {
+      color: #fff; }
+
+.tips-error {
+  background: #ff4949; }
+
+.tips-sucess {
+  background: #13ce66; }
+
 /* 首页 */
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -36,8 +63,8 @@ html, body {
   #app .head {
     height: 50px;
     background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
     #app .head .nav-logo {
       width: 50px;
       height: 50px;
@@ -45,11 +72,22 @@ html, body {
   #app .content {
     height: 100%;
     width: 100%;
-    padding-top: 50px; }
+    background: url("../../assets/img/login_bg.png");
+    background-size: 100px; }
+    #app .content .loading {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      z-index: 2; }
   #app .foot {
     position: fixed;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    z-index: 3; }
   #app .foot-nav-item {
     color: #212121;
     width: 100%; }
@@ -92,18 +130,12 @@ html, body {
   #app .el-menu-item {
     border-bottom: none; }
 
+/* 更多 */
 /* 登录 */
 #login {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: #fff;
-  background: url("../../assets/img/login_bg.png");
-  background-size: 100px;
-  margin-top: -40px; }
+  align-items: center; }
   #login .modal-pf {
     margin: 20px;
     padding: 15px 10px;
@@ -111,6 +143,9 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 9px 30px -6px rgba(0, 0, 0, 0.2), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
     background: url(../../assets/img/login-gray-bg.png) #fff bottom repeat-x; }
+  #login h4 {
+    font-weight: 700;
+    color: #666; }
   #login img {
     width: 80px;
     height: 80px;
@@ -137,29 +172,75 @@ html, body {
       display: block;
       background: url(../../assets/img/password.svg) no-repeat center center;
       background-size: 80%; }
-  #login .login-tip {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    min-height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff; }
-  #login .fade-enter, #login .fade-leave-active {
-    opacity: 0; }
-  #login .fade-leave-active {
-    transition: all .3s ease; }
-  #login .fade-enter-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1); }
+  #login .registForm {
+    width: 90%;
+    margin: 0 auto; }
+    #login .registForm .el-input__inner {
+      height: 48px;
+      line-height: 48px; }
+    #login .registForm .el-input-group__prepend {
+      padding: 0; }
+    #login .registForm .regist-user {
+      width: 46px;
+      height: 46px;
+      display: block;
+      background: url(../../assets/img/user.svg) no-repeat center center;
+      background-size: 50%; }
+    #login .registForm .regist-password {
+      width: 46px;
+      height: 46px;
+      display: block;
+      background: url(../../assets/img/password.svg) no-repeat center center;
+      background-size: 80%; }
+    #login .registForm .regist-email {
+      width: 46px;
+      height: 46px;
+      display: block;
+      background: url(../../assets/img/email.svg) no-repeat center center; }
+    #login .registForm .el-form-item {
+      margin: 20px; }
+    #login .registForm .el-form-item__content {
+      text-align: left; }
+      #login .registForm .el-form-item__content .el-radio__label {
+        font-size: 12px; }
   #login .btn-primary {
     width: 100%;
     font-size: 18px; }
+  #login .el-checkbox__label {
+    font-size: 12px;
+    color: #7f7f7f; }
+    #login .el-checkbox__label i {
+      color: #5079d9;
+      font-style: normal; }
+  #login .modal-foot a {
+    text-decoration: none;
+    color: #7f7f7f;
+    font-size: 13px; }
   #login .modal-foot p {
     padding-top: 23px;
     margin: 0;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
     border-top: 1px solid #d9d9d9; }
+    #login .modal-foot p i {
+      color: #5079d9;
+      font-style: normal; }
+
+/* 动画效果 */
+.fade-enter {
+  opacity: 0.7; }
+
+.fade-leave-active {
+  opacity: 0; }
+
+.fade-leave-active {
+  transition: all .3s ease; }
+
+.fade-enter-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1); }
+
+/* 电脑端 */
+@media (min-width: 992px) {
+  .modal-pf {
+    width: 450px; } }
 
 /*# sourceMappingURL=index.css.map */

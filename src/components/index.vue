@@ -1,6 +1,11 @@
 <template>
+ <div class="content">
   <div class="hello">
+      <div class="loading" v-if="loading">
+      拼命加载中...
+    </div>
     <h1>{{ msg }}</h1>
+  </div>
   </div>
 </template>
 
@@ -9,7 +14,8 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Fntys',
+      loading:false
     }
   }
 }

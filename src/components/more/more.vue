@@ -1,4 +1,5 @@
 <template>
+ <div class="content">
   <div class="more">
     <template>
   <el-tabs v-model="activeName" @tab-click="handleClick">
@@ -9,6 +10,7 @@
     <el-tab-pane label="" name="five"><span slot="label"><i class="el-icon-search"></i></span></el-tab-pane>
   </el-tabs>
 </template>
+  </div>
   </div>
 </template>
 

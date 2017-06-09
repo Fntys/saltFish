@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <nav class="head" v-show="isLogin">
+    <nav class="head" v-if="isLogin">
       <img class="nav-logo" src="./assets/img/fish.png">
     </nav>
-    <div class="content">
+    <transition :name="transitionName">
     <router-view></router-view>
-    </div>
+    </transition>
     <nav class="foot">
     <el-menu mode="horizontal" class="el-menu-nav" default-active="1" @select="handleSelect" >
     <el-row>
@@ -55,7 +55,26 @@ export default {
       secondTabName: '任务',
       thirdTabName: '更多',
       fourTabName: '帐号',
-      isLogin:true
+      isLogin:true,
+      transitionName: 'fade'
+    }
+  },
+    created () {
+    // 组件创建完后获取数据，
+    // 此时 data 已经被 observed 了
+    this.fetchData()
+  },
+  watch: {
+    '$route' (to, from) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'fade' : 'fade'
+      loading:true
+    }
+  },
+  methods:{
+    fetchData(){
+      this.loading = true
     }
   }
 }
