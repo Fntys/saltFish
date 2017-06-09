@@ -13,7 +13,7 @@
         </el-input>
         </el-form-item>
         <el-form-item prop="btn">
-        <el-button type="primary" @click="submitForm('loginForm')" class="btn btn-primary" :disabled="btn" v-model="loginForm.btn">登录</el-button>
+        <el-button type="primary" @click="submitForm('loginForm')" class="btn btn-primary" :disabled="true" v-model="loginForm.btn">登录</el-button>
         </el-form-item>
         </el-form>
         <div class="modal-foot">
