@@ -13,7 +13,7 @@
         </el-input>
         </el-form-item>
         <el-form-item prop="btn">
-        <el-button type="primary" @click="submitForm('loginForm')" class="btn btn-primary" :disabled="true" v-model="loginForm.btn">登录</el-button>
+        <el-button type="primary" @click="submitForm('loginForm')" class="btn btn-primary"  v-model="loginForm.btn">登录</el-button>
         </el-form-item>
         </el-form>
         <div class="modal-foot">
@@ -61,6 +61,9 @@ export default {
            var pass=this.$refs[formName].model.password;
            AV.User.logIn(username, pass).then(function (loginedUser) {
             this.$message({customClass:'tips tips-sucess',message: '登录成功，正在为您跳转...',type: 'success'})
+            const token=loginedUser._sessionToken;
+            const name=loginedUser._server
+            window.localStorage.setItem('userToken', token);
             setTimeout(function(){
             this.$router.push({name:'index'})
           }.bind(this),1000)

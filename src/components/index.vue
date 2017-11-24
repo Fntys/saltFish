@@ -14,7 +14,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Fntys',
+      msg: window.localStorage.userToken,
       loading:false
     }
   }
