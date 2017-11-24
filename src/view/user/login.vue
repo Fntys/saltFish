@@ -61,9 +61,11 @@ export default {
            var pass=this.$refs[formName].model.password;
            AV.User.logIn(username, pass).then(function (loginedUser) {
             this.$message({customClass:'tips tips-sucess',message: '登录成功，正在为您跳转...',type: 'success'})
-            const token=loginedUser._sessionToken;
-            const name=loginedUser._server
+            var name=loginedUser.getUsername(),
+            email=loginedUser.getEmail(),
+            token=loginedUser.getSessionToken();
             window.localStorage.setItem('userToken', token);
+            window.localStorage.setItem('userName', name);
             setTimeout(function(){
             this.$router.push({name:'index'})
           }.bind(this),1000)

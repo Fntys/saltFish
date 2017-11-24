@@ -22,7 +22,7 @@ html, body {
     opacity: .4;
     pointer-events: none;
     background: linear-gradient(#6383c6, #4262af);
-    text-shadow: rgba(255, 255, 255, 0.49609) 0 1px 0;
+    text-shadow: rgba(255, 255, 255, 0.496094) 0 1px 0;
     color: #fff; }
 
 /* 提示框 */
@@ -73,7 +73,10 @@ html, body {
     height: 100%;
     width: 100%;
     background: url("../../assets/img/login_bg.png");
-    background-size: 100px; }
+    background-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     #app .content .loading {
       height: 100%;
       position: absolute;
@@ -135,14 +138,10 @@ html, body {
 #login {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
   #login .modal-pf {
-    margin: 20px;
-    padding: 15px 10px;
-    border: 1px solid #dadada;
-    border-radius: 10px;
-    box-shadow: 0 9px 30px -6px rgba(0, 0, 0, 0.2), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 18px 20px -10px rgba(0, 0, 0, 0.04), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
-    background: url(../../assets/img/login-gray-bg.png) #fff bottom repeat-x; }
+    width: 100%; }
   #login h4 {
     font-weight: 700;
     color: #666; }

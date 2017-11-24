@@ -14,7 +14,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: window.localStorage.userToken,
+      msg: '下午好，欢迎你。'+window.localStorage.userName,
       loading:false
     }
   }

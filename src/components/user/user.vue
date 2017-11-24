@@ -1,9 +1,14 @@
-<template>
+<template v-if="ok">
+    
+</template>
+
+
+
+<template v-else>
 <div class="content">
-<div id="login" @keyup.enter="login">
+<div id="login">
             <div class="modal-pf">
             <div class="modal-title">
-            <img src="../../assets/img/fish.svg" alt="" >
             <router-view></router-view>
             </div>
             </div>
